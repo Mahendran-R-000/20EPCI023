@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+const API_BASE_URL = 'http://localhost:4000/api'; // Replace with your actual backend API URL
+
+const productService = {
+  async getProducts() {
+    const response = await axios.get(`${API_BASE_URL}/catogries/products`);
+    return response.data;
+  },
+  async getProductById(productId) {
+    const response = await axios.get(`${API_BASE_URL}/catagories/products/${productId}`);
+    return response.data;
+  },
+  // Add more methods for filtering, sorting, etc.
+};
+
+export default productService;
